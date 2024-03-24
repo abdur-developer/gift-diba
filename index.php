@@ -86,7 +86,7 @@
 
 		       		?> -->
 					<!-- new added section starts -->
-					<div id="" class="scroll-container">
+					<div id="" class="">
 						<?php
 							$conn = $pdo->open();
 							try{
