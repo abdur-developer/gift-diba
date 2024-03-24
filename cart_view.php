@@ -5,7 +5,7 @@
 
 	<?php include 'includes/navbar.php'; ?>
 	 
-	  <div class="content-wrapper bg-dark">
+	  <div class="content-wrapper">
 	    <div class="container">
 
 	      <!-- Main content -->
@@ -21,7 +21,7 @@
 		        				<th>Photo</th>
 		        				<th>Name</th>
 		        				<th>Price</th>
-		        				<th>Quantity</th>
+		        				<!-- <th>Quantity</th> -->
 		        				<th>Subtotal</th>
 		        			</thead>
 		        			<tbody id="tbody">
@@ -32,7 +32,7 @@
 	        		<?php
 	        			if(isset($_SESSION['user'])){
 	        				echo "
-	        					<div class='btn btn-warning rounded'>Buy All</div>
+	        					<a href='buy.php' class='btn btn-warning rounded'>Buy All</a>
 	        				";
 	        			}
 	        			else{
@@ -155,6 +155,7 @@ function getTotal(){
 }
 </script>
 <script>
+	
 	function goToPayment(){
 		window.location = 'payment.php';
 	}

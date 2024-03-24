@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="contact" class="col-sm-3 control-label">Contact Info</label>
+                    <label for="contact" class="col-sm-3 control-label">Contact Number</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="contact" name="contact" value="<?php echo $user['contact_info']; ?>">

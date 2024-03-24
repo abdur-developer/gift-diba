@@ -90,6 +90,7 @@
                   <th>Photo</th>
                   <th>Description</th>
                   <th>Price</th>
+                  <th>O.Price</th>
                   <th>Views Today</th>
                   <th>Tools</th>
                 </thead>
@@ -112,7 +113,8 @@
                               <span class='pull-right'><a href='#edit_photo' class='photo' data-toggle='modal' data-id='".$row['id']."'><i class='fa fa-edit'></i></a></span>
                             </td>
                             <td><a href='#description' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> View</a></td>
-                            <td>&#36; ".number_format($row['price'], 2)."</td>
+                            <td>&#2547; ".number_format($row['price'], 2)."</td>
+                            <td>&#2547; ".number_format($row['old_price'], 2)."</td>
                             <td>".$counter."</td>
                             <td>
                               <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
@@ -211,6 +213,7 @@ function getRow(id){
       $('#edit_name').val(response.prodname);
       $('#catselected').val(response.category_id).html(response.catname);
       $('#edit_price').val(response.price);
+      $('#edit_old_price').val(response.old_price);
       CKEDITOR.instances["editor2"].setData(response.description);
       getCategory();
     }

@@ -52,9 +52,12 @@
 		       								</div>
 		       								<div class='box-footer'>
 											   <div class='row'>
-												<div class='col-sm-7' style='margin-top: 5px'><b>&#2547; ".number_format($row['price'], 2)."</b></div>
-												<div class='col-sm-4' style='margin-left: 13px'><a href='product.php?product=".$row['slug']."' class='btn btn-success' style='color:#fff;'>View</a></div>
-											  </div>
+													<div class='col-sm-6 price-line'><b>&#2547; ".$row['old_price']."</b></div>
+													<div class='col-sm-6 price' ><b>&#2547; ".$row['price']."</b></div>
+												</div>
+												<div class='row'>
+													<div class='col-sm-12 text-center'><a href='product.php?product=".$row['slug']."' class='btn btn-success text-white' style='width:200px ;'>View</a></div>
+												</div>
 		       								</div>
 	       								</div>
 	       							</div>

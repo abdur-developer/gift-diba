@@ -10,7 +10,7 @@
 
 	<?php include 'includes/navbar.php'; ?>
 	 
-	  <div class="content-wrapper bg-dark">
+	  <div class="content-wrapper">
 	    <div class="container">
 
 	      <!-- Main content -->
@@ -46,7 +46,7 @@
 	        						<div class="col-sm-3">
 	        							<h4>Name:</h4>
 	        							<h4>Email:</h4>
-	        							<h4>Contact Info:</h4>
+	        							<h4>Contact Number:</h4>
 	        							<h4>Address:</h4>
 	        							<h4>Member Since:</h4>
 	        						</div>
@@ -98,7 +98,7 @@
 	        										<td class='hidden'></td>
 	        										<td>".date('M d, Y', strtotime($row['sales_date']))."</td>
 	        										<td>".$row['pay_id']."</td>
-	        										<td>&#36; ".number_format($total, 2)."</td>
+	        										<td>&#2547; ".number_format($total, 2)."</td>
 	        										<td><button class='btn btn-sm btn-flat btn-info transact' data-id='".$row['id']."'><i class='fa fa-search'></i> View</button></td>
 	        									</tr>
 	        								";

@@ -80,4 +80,13 @@ function getCart(){
 		}
 	});
 }
+const addToCart = document.getElementsByClassName('add-to-cart');
+for(let x = 0; x < addToCart.length; x++){
+    let element = addToCart[x];
+    element.addEventListener('click', function(){
+        setTimeout(function(){
+            location.reload();
+        }, 500);
+    })
+}
 </script>

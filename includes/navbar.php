@@ -1,5 +1,5 @@
 <header class="main-header">
-  <nav class="navbar navbar-static-top bg-black">
+  <nav class="navbar navbar-static-top bg-nav">
     <div class="container">
       <div class="navbar-header">
         <a href="index.php" class="navbar-brand"><img src="images/main/logo.png

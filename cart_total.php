@@ -12,6 +12,7 @@
 			$subtotal = $row['price'] * $row['quantity'];
 			$total += $subtotal;
 		}
+		$_SESSION['total'] = $total;
 
 		$pdo->close();
 

@@ -1,4 +1,4 @@
-<footer class="main-footer bg-black">
+<footer class="main-footer bg-nav">
     <div class="container">
       <div class="pull-right hidden-xs">
         <b>All rights reserved</b>

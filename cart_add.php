@@ -27,6 +27,7 @@
 		else{
 			$output['error'] = true;
 			$output['message'] = 'Product already in cart';
+			header("location: cart_view.php");
 		}
 	}
 	else{
@@ -43,6 +44,7 @@
 		if(in_array($id, $exist)){
 			$output['error'] = true;
 			$output['message'] = 'Product already in cart';
+			header("location: cart_view.php");
 		}
 		else{
 			$data['productid'] = $id;

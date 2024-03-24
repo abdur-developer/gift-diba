@@ -18,11 +18,11 @@
 	//page view
 	$now = date('Y-m-d');
 	if($product['date_view'] == $now){
-		$stmt = $conn->prepare("UPDATE products SET counter=counter+1 WHERE id=:id");
+		$stmt = $conn->prepare("UPDATE products SET counter=counter+1, total_view=total_view+1 WHERE id=:id");
 		$stmt->execute(['id'=>$product['prodid']]);
 	}
 	else{
-		$stmt = $conn->prepare("UPDATE products SET counter=1, date_view=:now WHERE id=:id");
+		$stmt = $conn->prepare("UPDATE products SET counter=1, total_view=total_view+1, date_view=:now WHERE id=:id");
 		$stmt->execute(['id'=>$product['prodid'], 'now'=>$now]);
 	}
 
@@ -68,21 +68,46 @@
 										<div class="form-group">
 											<input type="hidden" name="quantity" id="quantity" value="1">
 											<input type="hidden" name="id" value="<?php echo $product['prodid']; ?>">
-											<button type="submit" class="btn btn-primary btn-lg btn-flat"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+											<button type="submit" class="btn btn-primary btn-lg btn-flat add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
 										</div>
 									</form>
 									<?php }else{ ?>
 										<a class="btn btn-success btn-lg btn-flat" style="color: #fff" href="cart_view.php"><i class="fa fa-bag"></i> Buy now</a>
 									<?php }
-							}else{ ?>
+							}else{ 
+								if(isset($_SESSION['cart'])){
+									$exist_cart = array();
+
+									foreach($_SESSION['cart'] as $row){
+										array_push($exist_cart, $row['productid']);
+									}
+									if(in_array($product['prodid'], $exist_cart)){ ?>
+										<a class="btn btn-success btn-lg btn-flat" style="color: #fff" href="cart_view.php">
+										<i class="fa fa-bag"></i> Buy now</a>
+									<?php
+									}else{
+										?>
+										<form class="form-inline" id="productForm">
+											<div class="form-group">
+												<input type="hidden" name="quantity" id="quantity" value="1">
+												<input type="hidden" name="id" value="<?php echo $product['prodid']; ?>">
+												<button type="submit" class="btn btn-primary btn-lg btn-flat add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+											</div>
+										</form>
+										<?php 
+									}
+								}else{
+									?>
 									<form class="form-inline" id="productForm">
 										<div class="form-group">
 											<input type="hidden" name="quantity" id="quantity" value="1">
 											<input type="hidden" name="id" value="<?php echo $product['prodid']; ?>">
-											<button type="submit" class="btn btn-primary btn-lg btn-flat"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+											<button type="submit" class="btn btn-primary btn-lg btn-flat add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
 										</div>
 									</form>
 									<?php 
+								}
+								
 							}
 							
 							?>

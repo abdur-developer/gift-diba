@@ -38,8 +38,9 @@
 
   	<!-- Custom CSS -->
     <style type="text/css">
-      dark{
-        background-color: black;
+
+      .bg-nav{
+        background-color: #e05d0f !important;
         color: white;
       }
     /* Small devices (tablets, 768px and up) */
@@ -69,18 +70,26 @@
       height:300px;
     }
     .box {
-      animation-duration: 2s;
-      animation-iteration-count: 
+      position: relative;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border: 3px solid white;
     }
-    .box:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        animation-name: bounce;
-        animation-timing-function: ease;
+    .box:hover{
+      border: 3px solid #ee6d05;
     }
-    @keyframes bounce {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-15px); }
-      100% { transform: translateY(0); }
+    .box .price-line{
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-left: 50px;
+      text-decoration: line-through;
+      color: #918080;
+      font-size: 13px;
+    }
+    .box .price{
+      margin-top: 5px;
+      color: #e05d0f;
+      font-size: 13px;
     }
     .register-box{
       margin-top:20px;
@@ -123,11 +132,11 @@
       color: white;
     }
     .bg-card {
-      background-color: #3d3d3d;
+      background-color: #668cff;
       color: white;
     }
     .bg-card a{
-      color: aquamarine;
+      color: cyan;
     }
 
     </style>

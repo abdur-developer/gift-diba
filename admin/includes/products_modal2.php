@@ -57,6 +57,11 @@
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="edit_price" name="price">
                   </div>
+                  <label for="edit_old_price" class="col-sm-1 control-label">Old Price</label>
+
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="edit_old_price" name="old_price">
+                  </div>
                 </div>
                 <p><b>Description</b></p>
                 <div class="form-group">
